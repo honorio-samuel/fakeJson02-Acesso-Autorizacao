@@ -1,0 +1,61 @@
+{
+  "usuarios": [
+    { "id": 1, "login": "carlos.andrade", "senha": "123456", "papel": "ADMINISTRADOR", "situacao": "ATIVO", "tentativasFalhas": 0, "bloqueadoAte": null, "ultimoAcesso": "2026-09-28T08:00:03", "idPessoa": 1 },
+    { "id": 2, "login": "beatriz.lima", "senha": "123456", "papel": "ADMINISTRADOR", "situacao": "ATIVO", "tentativasFalhas": 1, "bloqueadoAte": null, "ultimoAcesso": "2026-09-26T17:40:00", "idPessoa": 2 },
+    { "id": 3, "login": "juliana.costa", "senha": "123456", "papel": "SECRETARIA", "situacao": "ATIVO", "tentativasFalhas": 0, "bloqueadoAte": null, "ultimoAcesso": "2026-09-28T07:55:10", "idPessoa": 3 },
+    { "id": 4, "login": "ricardo.menezes", "senha": "123456", "papel": "MEDICO", "situacao": "ATIVO", "tentativasFalhas": 0, "bloqueadoAte": null, "ultimoAcesso": "2026-09-28T08:30:00", "idPessoa": 5 },
+    { "id": 5, "login": "patricia.nogueira", "senha": "123456", "papel": "MEDICO", "situacao": "ATIVO", "tentativasFalhas": 0, "bloqueadoAte": null, "ultimoAcesso": "2026-09-27T21:40:00", "idPessoa": 6 },
+    { "id": 6, "login": "lucas.pereira", "senha": "123456", "papel": "PACIENTE", "situacao": "ATIVO", "tentativasFalhas": 0, "bloqueadoAte": null, "ultimoAcesso": "2026-09-27T09:10:00", "idPessoa": 8 },
+    { "id": 7, "login": "helena.martins", "senha": "123456", "papel": "RESPONSAVEL_LEGAL", "situacao": "ATIVO", "tentativasFalhas": 5, "bloqueadoAte": "2026-09-28T10:30:00", "ultimoAcesso": "2026-09-25T15:00:00", "idPessoa": 12 }
+  ],
+  "logsAuditoria": [
+    { "id": 1, "dataHora": "2026-09-28T07:58:20", "acao": "LOGIN", "papel": "ADMINISTRADOR", "rota": "/login", "registroAlvo": "usuarios:2", "resultado": "FALHA", "idUsuario": 2 },
+    { "id": 2, "dataHora": "2026-09-28T08:00:03", "acao": "LOGIN", "papel": "ADMINISTRADOR", "rota": "/login", "registroAlvo": "usuarios:1", "resultado": "SUCESSO", "idUsuario": 1 },
+    { "id": 3, "dataHora": "2026-09-28T09:05:12", "acao": "CONSULTAR", "papel": "MEDICO", "rota": "/prontuarios/1", "registroAlvo": "prontuarios:1", "resultado": "PERMITIDO", "idUsuario": 4 },
+    { "id": 4, "dataHora": "2026-09-28T09:10:44", "acao": "CONSULTAR", "papel": "SECRETARIA", "rota": "/anexos/2/conteudo", "registroAlvo": "anexos:2", "resultado": "NEGADO", "idUsuario": 3 },
+    { "id": 5, "dataHora": "2026-09-28T10:15:31", "acao": "LOGIN", "papel": "RESPONSAVEL_LEGAL", "rota": "/login", "registroAlvo": "usuarios:7", "resultado": "BLOQUEADO", "idUsuario": 7 }
+  ],
+  "parametros": [
+    { "id": 1, "chave": "X01", "descricao": "Tentativas de login malsucedidas antes do bloqueio", "valor": 5, "unidade": "tentativas", "faixaMinima": 3, "faixaMaxima": 10, "idAdministrador": 1 },
+    { "id": 2, "chave": "X09", "descricao": "Antecedência do lembrete automático de consulta", "valor": 24, "unidade": "horas", "faixaMinima": 1, "faixaMaxima": 168, "idAdministrador": 1 },
+    { "id": 3, "chave": "X44", "descricao": "Tentativas de reenvio automático de notificação com falha", "valor": 3, "unidade": "tentativas", "faixaMinima": 0, "faixaMaxima": 10, "idAdministrador": 2 },
+    { "id": 4, "chave": "X45", "descricao": "Intervalo entre tentativas de reenvio", "valor": 30, "unidade": "minutos", "faixaMinima": 1, "faixaMaxima": 1440, "idAdministrador": 2 },
+    { "id": 5, "chave": "X07", "descricao": "Duração do acesso clínico de exceção", "valor": 24, "unidade": "horas", "faixaMinima": 1, "faixaMaxima": 72, "idAdministrador": 1 }
+  ],
+  "representacoes": [
+    { "id": 1, "grauParentesco": "MAE", "inicioVigencia": "2026-01-10", "fimVigencia": null, "documento": "certidao_nascimento_representada.pdf", "idResponsavelLegal": 12, "idPaciente": 11 }
+  ],
+  "vinculos": [
+    { "id": 1, "estado": "ATIVO", "dataInicio": "2026-09-28T09:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 8, "idMedico": 5 },
+    { "id": 2, "estado": "PENDENTE", "dataInicio": "2026-09-10T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 9, "idMedico": 5 },
+    { "id": 3, "estado": "HISTORICO", "dataInicio": "2026-09-21T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 10, "idMedico": 5 },
+    { "id": 4, "estado": "PENDENTE", "dataInicio": "2026-09-20T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 11, "idMedico": 6 },
+    { "id": 5, "estado": "PENDENTE", "dataInicio": "2026-09-25T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 8, "idMedico": 7 },
+    { "id": 6, "estado": "ENCERRADO", "dataInicio": "2026-09-20T00:00:00", "dataFim": "2026-09-28T08:45:00", "motivoEncerramento": "NAO_COMPARECEU", "idPaciente": 13, "idMedico": 5 },
+    { "id": 7, "estado": "ENCERRADO", "dataInicio": "2026-09-22T00:00:00", "dataFim": "2026-09-27T16:00:00", "motivoEncerramento": "CANCELAMENTO", "idPaciente": 14, "idMedico": 5 },
+    { "id": 8, "estado": "PENDENTE", "dataInicio": "2026-09-24T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 15, "idMedico": 5 },
+    { "id": 9, "estado": "PENDENTE", "dataInicio": "2026-09-25T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 16, "idMedico": 5 },
+    { "id": 10, "estado": "PENDENTE", "dataInicio": "2026-09-26T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 17, "idMedico": 5 },
+    { "id": 11, "estado": "PENDENTE", "dataInicio": "2026-09-23T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 18, "idMedico": 7 },
+    { "id": 12, "estado": "PENDENTE", "dataInicio": "2026-09-24T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 19, "idMedico": 7 },
+    { "id": 13, "estado": "PENDENTE", "dataInicio": "2026-09-25T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 20, "idMedico": 7 },
+    { "id": 14, "estado": "PENDENTE", "dataInicio": "2026-09-26T00:00:00", "dataFim": null, "motivoEncerramento": null, "idPaciente": 21, "idMedico": 7 }
+  ],
+  "acessosExcecao": [
+    { "id": 1, "dataHora": "2026-09-20T22:10:00", "justificativa": "Substituição de plantão do médico responsável", "duracao": 24, "revisado": true, "idMedico": 7, "idPaciente": 9 },
+    { "id": 2, "dataHora": "2026-09-27T21:45:00", "justificativa": "Atendimento de urgência fora do horário", "duracao": 24, "revisado": false, "idMedico": 6, "idPaciente": 8 }
+  ],
+  "solicitacoesTitular": [
+    { "id": 1, "tipo": "PORTABILIDADE", "dataSolicitacao": "2026-09-20", "dataResposta": "2026-09-21", "situacao": "CONCLUIDA", "idPaciente": 8 },
+    { "id": 2, "tipo": "ACESSO", "dataSolicitacao": "2026-09-27", "dataResposta": null, "situacao": "EM_ANALISE", "idPaciente": 9 }
+  ],
+  "notificacoes": [
+    { "id": 1, "evento": "LEMBRETE_CONSULTA", "canal": "SMS", "destino": "(11) 90000-0008", "dataEnvio": "2026-09-27T09:00:00", "situacao": "ENTREGUE", "tentativas": 1, "idPessoa": 8, "idConsulta": 1, "idParametro": 2 },
+    { "id": 2, "evento": "LEMBRETE_CONSULTA", "canal": "EMAIL", "destino": "helena.martins@clinica.exemplo", "dataEnvio": "2026-09-28T14:00:00", "situacao": "FALHOU", "tentativas": 3, "idPessoa": 12, "idConsulta": 4, "idParametro": 3 },
+    { "id": 3, "evento": "CANCELAMENTO_CONSULTA", "canal": "SMS", "destino": "(11) 90000-0009", "dataEnvio": "2026-09-13T16:00:00", "situacao": "ENTREGUE", "tentativas": 1, "idPessoa": 9, "idConsulta": 6, "idParametro": 2 },
+    { "id": 4, "evento": "CANCELAMENTO_CONSULTA", "canal": "SMS", "destino": "(11) 90000-0014", "dataEnvio": "2026-09-27T16:00:00", "situacao": "ENTREGUE", "tentativas": 1, "idPessoa": 14, "idConsulta": 10, "idParametro": 2 }
+  ],
+  "exportacoes": [
+    { "id": 1, "tipo": "PRONTUARIO_COMPLETO", "formato": "PDF+JSON", "dataSolicitacao": "2026-09-20T10:00:00", "dataConclusao": "2026-09-20T10:01:30", "situacao": "CONCLUIDA", "idProntuario": 1, "idSolicitacaoTitular": 1 }
+  ]
+}
